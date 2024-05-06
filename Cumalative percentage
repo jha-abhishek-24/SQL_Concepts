@@ -1,0 +1,11 @@
+𝐓𝐨𝐩𝐢𝐜: Cumulative Percentage in SQL
+𝐂𝐨𝐧𝐜𝐞𝐩𝐭 𝐞𝐱𝐩𝐥𝐚𝐧𝐚𝐭𝐢𝐨𝐧: Cumulative Percentage in SQL tracks the running percentage of a value over ordered rows, offering insights into its contribution to the total as rows are processed sequentially. 
+
+𝐐𝐮𝐞𝐫𝐲 𝐞𝐱𝐩𝐥𝐚𝐧𝐚𝐭𝐢𝐨𝐧: The 𝗥𝗼𝘂𝗻𝗱((𝘀𝘂𝗺(𝗿𝗲𝘃𝗲𝗻𝘂𝗲) 𝗼𝘃𝗲𝗿 (𝗼𝗿𝗱𝗲𝗿 𝗯𝘆 𝗱𝗮𝘁𝗲) / 𝘀𝘂𝗺(𝗿𝗲𝘃𝗲𝗻𝘂𝗲) 𝗼𝘃𝗲𝗿 ()) * 𝟭𝟬𝟬, 𝟮) formula calculates the percentage contribution of the cumulative revenue for each row relative to the total revenue, rounded to two decimal places.
+• 𝗦𝘂𝗺(𝗿𝗲𝘃𝗲𝗻𝘂𝗲) 𝗼𝘃𝗲𝗿 (𝗼𝗿𝗱𝗲𝗿 𝗯𝘆 𝗱𝗮𝘁𝗲): Calculates the cumulative sum of revenue up to the current row, ordered by the date.
+• 𝐒𝐮𝐦(𝐫𝐞𝐯𝐞𝐧𝐮𝐞) 𝐨𝐯𝐞𝐫 (): Computes the total sum of revenue across all rows, without any specific order.
+• (𝘀𝘂𝗺(𝗿𝗲𝘃𝗲𝗻𝘂𝗲) 𝗼𝘃𝗲𝗿 (𝗼𝗿𝗱𝗲𝗿 𝗯𝘆 𝗱𝗮𝘁𝗲) / 𝘀𝘂𝗺(𝗿𝗲𝘃𝗲𝗻𝘂𝗲) 𝗼𝘃𝗲𝗿 ()) * 𝟭𝟬𝟬: Divides the cumulative revenue up to the current row by the total revenue. Multiplies the result by 100 to convert it into a percentage.
+• 𝐑𝐨𝐮𝐧𝐝(..., 𝟐): Rounds the calculated percentage to two decimal places for readability.
+
+𝐄𝐱𝐚𝐦𝐩𝐥𝐞 𝐟𝐫𝐨𝐦 𝐨𝐮𝐭𝐩𝐮𝐭:
+The 𝗰𝘂𝗺𝘂𝗹𝗮𝘁𝗶𝘃𝗲_𝗽𝗲𝗿𝗰𝗲𝗻𝘁𝗮𝗴𝗲 for '𝟮𝟬𝟮𝟰-𝟬𝟰-𝟬𝟯' is (4500 / 7000) * 100 = 64.29%.
